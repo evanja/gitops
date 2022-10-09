@@ -6,7 +6,7 @@ services:
     container_name: airsonic
     
     ports:
-      - ${AIRSONIC}:4040
+      - ${AIRSONIC_PORT}:4040
     
     environment:
       - PUID=${PUID}
@@ -15,7 +15,10 @@ services:
 #      - CONTEXT_PATH=<URL_BASE> #optional
 #      - JAVA_OPTS=<options> #optional
     volumes:
-      - ${CONFIGDIR}airsonic:/config
+      - type: volume
+        source: config
+        target: /config
+
       - type: volume
         source: nfs-audios
         target: /music
@@ -30,3 +33,6 @@ volumes:
       type: "nfs"
       o: "addr=192.168.1.40,nolock,soft,rw"
       device: ":/export/audios"
+
+  config:
+    
