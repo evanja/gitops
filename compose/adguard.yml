@@ -1,0 +1,17 @@
+version: "2"
+services:
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    ports:
+      - ${DNS_PORT}:53/tcp
+      - ${DNS_PORT}:53/udp
+#      - 784:784/udp
+#      - 853:853/tcp
+      - ${AG_MGMT_HTTP}:3000/tcp
+      - ${AG_MGMT}:80/tcp
+#      - 1443:443/tcp
+    volumes:
+      - ${CONFIGDIR}adguard/work:/opt/adguardhome/work
+      - ${CONFIGDIR}adguard/conf:/opt/adguard/conf
+    restart: unless-stopped
