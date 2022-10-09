@@ -23,7 +23,7 @@ services:
       WEBPASSWORD: '${PASSWORD}'
     # Volumes store your data between container upgrades
     volumes:
-      - '${CONFIGDIR}:/etc/pihole/'
+      - '${CONFIGDIR}/pihole:/etc/pihole/'
       - '${DNSMASQ}:/etc/dnsmasq.d/'
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
