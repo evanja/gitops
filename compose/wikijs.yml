@@ -1,0 +1,20 @@
+version: "3"
+services:
+
+  wiki:
+    image: ghcr.io/requarks/wiki:2
+#    depends_on:
+#      - db
+    environment:
+      DB_TYPE: "${DBTYPE}"
+      DB_HOST: "${DBHOST}"
+      DB_PORT: "${DBPORT}"
+      DB_USER: "${DBUSER}"
+      DB_PASS: "${DBPASSWORD}"
+      DB_NAME: "${DBNAME}"
+    restart: unless-stopped
+    ports:
+      - "${WIKIPORT}:3000"
+
+#volumes:
+#  db-data:

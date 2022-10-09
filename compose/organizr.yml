@@ -1,0 +1,17 @@
+---
+version: "2"
+services:
+  duplicati:
+    image: organizr/organizr
+    container_name: organizr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Brisbane
+      - FPM=true
+      - branch=v2-master
+    volumes:
+      - /home/console/config/organizr:/config
+    ports:
+      - 8100:80
+    restart: unless-stopped

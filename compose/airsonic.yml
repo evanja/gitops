@@ -1,0 +1,32 @@
+---
+version: "2.1"
+services:
+  airsonic:
+    image: lscr.io/linuxserver/airsonic
+    container_name: airsonic
+    
+    ports:
+      - ${AIRSONIC}:4040
+    
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+#      - CONTEXT_PATH=<URL_BASE> #optional
+#      - JAVA_OPTS=<options> #optional
+    volumes:
+      - ${CONFIGDIR}airsonic:/config
+      - type: volume
+        source: nfs-audios
+        target: /music
+        volume:
+          nocopy: true
+
+  restart: unless-stopped
+
+volumes:
+  nfs-audios:
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.1.40,nolock,soft,rw"
+      device: ":/export/audios"

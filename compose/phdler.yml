@@ -1,0 +1,11 @@
+version: "2"
+services:
+  phdler:
+    image: ubuntu:latest
+    container_name: phdler
+    ports:
+      - 225:22/tcp
+    volumes:
+      - /home/console/config/phdler:/db
+      - /home/console/media/amateur:/downloads
+    restart: unless-stopped

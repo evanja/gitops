@@ -1,0 +1,23 @@
+---
+version: "2"
+services:
+  librespeed:
+    image: lscr.io/linuxserver/librespeed
+    container_name: librespeed
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Brisbane
+      - PASSWORD=T00woomb@
+#      - CUSTOM_RESULTS=false #optional
+#      - DB_TYPE=sqlite #optional
+#      - DB_NAME=librespeed #optional
+#      - DB_HOSTNAME=DB_HOSTNAME #optional
+#      - DB_USERNAME=DB_USERNAME #optional
+#      - DB_PASSWORD=DB_PASSWORD #optional
+#      - DB_PORT=DB_PORT #optional
+    volumes:
+      - /homer/console/librespeed/config:/config
+    ports:
+      - 8066:80
+    restart: unless-stopped

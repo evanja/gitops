@@ -1,0 +1,15 @@
+version: "2"
+services:
+    ytdl_material:
+        environment: 
+            ALLOW_CONFIG_MUTATIONS: 'true'
+        restart: always
+        volumes:
+            - /home/console/config/yt-dl:/app/appdata
+            - /home/console/media/audios:/app/audio
+            - /home/console/media/tv:/app/tv
+            - ./subscriptions:/app/subscriptions
+            - /home/console/media/amateur:/app/amateur
+        ports:
+            - "8998:17442"
+        image: tzahi12345/youtubedl-material:latest

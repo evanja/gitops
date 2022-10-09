@@ -1,0 +1,11 @@
+version: "3"
+services:
+  rmd:
+    image: shadowmoose/redditdownloader
+    container_name: rmd
+    ports:
+      - 7505:7505/tcp
+    volumes:
+      - /home/console/media/audios:/output
+      - /home/console/config/rmd:/download
+    restart: unless-stopped

@@ -1,0 +1,21 @@
+---
+version: "2.1"
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Brisbane
+      - PASSWORD=aSf!N1rlQJn4V77F&&PcNLosnFAX1! #optional
+#      - HASHED_PASSWORD= #optional
+#      - SUDO_PASSWORD=password #optional
+#      - SUDO_PASSWORD_HASH= #optional
+      - PROXY_DOMAIN=vscode.eja.net.au #optional
+      - DEFAULT_WORKSPACE=/config/workspace #optional
+    volumes:
+      - /home/console/config/vscode:/config
+    ports:
+      - 3443:8443
+    restart: unless-stopped

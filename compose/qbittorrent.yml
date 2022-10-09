@@ -1,0 +1,23 @@
+---
+version: "2.1"
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Brisbane
+      - WEBUI_PORT=8080
+    volumes:
+      - /home/console/config/qbittorrent:/config
+      - /home/console/downloads:/downloads
+      - /home/console/media/tv:/tv
+      - /home/console/media/movies:/movies
+#      - /home/console/media/games:/games
+#      - /home/console/media/comics:/comics
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 8080:8080
+    restart: unless-stopped
