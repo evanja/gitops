@@ -15,3 +15,7 @@ services:
       - ${CONFIGDIR}adguard/work:/opt/adguardhome/work
       - ${CONFIGDIR}adguard/conf:/opt/adguard/conf
     restart: unless-stopped
+
+networks:
+  adguard_network:
+    external: true
