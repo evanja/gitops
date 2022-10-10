@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     ## the container's port must be the same with the STASH_PORT in the environment section
     ports:
-      - "9999:9999"
+      - "${STASH_PORT}:9999"
     ## If you intend to use stash's DLNA functionality uncomment the below network mode and comment out the above ports section
     # network_mode: host
     logging:
@@ -29,13 +29,13 @@ services:
       ## E.g. you can change ./config:/root/.stash to ./stash:/root/.stash
       
       ## Keep configs, scrapers, and plugins here.
-      - /home/console/config/stash:/root/.stash
+      - ${CONFIGDIR}stash:/root/.stash
       ## Point this at your collection.
       - /home/console/media/adult:/adult
       - /home/console/media/amateur:/amateur
       ## This is where your stash's metadata lives
-      - /home/console/config/stash/metadata:/metadata
+      - ${CONFIGDIR}stash/metadata:/metadata
       ## Any other cache content.
-      - /home/console/config/stash/cache:/cache
+      - ${CONFIGDIR}stash/cache:/cache
       ## Where to store generated content (screenshots,previews,transcodes,sprites)
-      - /home/console/config/stash/generated:/generated
+      - ${CONFIGDIR}stash/generated:/generated
