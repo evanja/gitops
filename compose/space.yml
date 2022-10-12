@@ -146,7 +146,7 @@ services:
             MINIO_ROOT_PASSWORD: space-secret-key
         command: server --address :9000 --console-address :9001 --compat /data
         ports:
-        - "9000:9000"
+        - "9002:9000"
         - "9001"
         networks:
         - "backend-data"
