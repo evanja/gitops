@@ -4,8 +4,8 @@ services:
     image: shadowmoose/redditdownloader
     container_name: rmd
     ports:
-      - 7505:7505/tcp
+      - ${RMD_PORT}:7505/tcp
     volumes:
-      - /home/console/media/audios:/output
-      - /home/console/config/rmd:/download
+      - ${ADULTAUDIOS}:/output
+      - ${CONFIGDIR}rmd:/download
     restart: unless-stopped
