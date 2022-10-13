@@ -15,24 +15,10 @@ services:
 #      - CONTEXT_PATH=<URL_BASE> #optional
 #      - JAVA_OPTS=<options> #optional
     volumes:
-      - type: volume
-        source: config
-        target: /config
-
-      - type: volume
-        source: nfs-audios
-        target: /music
-        volume:
-          nocopy: true
+      - ${CONFIGDIR}airsonic:/config
+      - ${AUDIOS}:/data/music
 
   restart: unless-stopped
-
-volumes:
-  nfs-audios:
-    driver_opts:
-      type: "nfs"
-      o: "addr=192.168.1.40,nolock,soft,rw"
-      device: ":/export/audios"
 
   config:
     
