@@ -10,11 +10,12 @@ services:
       - TZ=${TZ}
     volumes:
       - ${CONFIGDIR}emby:/config
-      - /home/console/media/interactive:/data/interactive
-      - /home/console/media/adult:/data/adult
-      - /home/console/media/onlyfans:/data/onlyfans
-      - /home/console/media/unsorted:/unsorted
-      - /home/console/media/amateur:/data/amateur
+      - ${INTERACTIVE}:/data/interactive
+      - ${ADULTSCENES}:/data/adultscenes
+      - ${ADULTMOVIES}:/data/adultmovies
+      - ${OF}:/data/onlyfans
+      - ${DOWNLOADS}:/unsorted
+      - ${AMATEUR}:/data/amateur
     # - /opt/vc/lib:/opt/vc/lib #optional
     ports:
       - ${EMBY_PORT}:8096
