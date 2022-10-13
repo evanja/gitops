@@ -1,24 +1,25 @@
 ---
-version: "2.1"
+version: "3"
 services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent
     container_name: qbittorrent
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Australia/Brisbane
-      - WEBUI_PORT=8080
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - WEBUI_PORT=${QBA}
     volumes:
-      - /home/console/config/qb-adult:/config
-      - /home/console/media/unsorted:/downloads
-      - /home/console/media/adult:/adult
-      - /home/console/media/amateur:/amateur
-      - /home/console/media/interactive:/interactive
-      - /home/console/media/games:/games
-      - /home/console/media/onlyfans:/onlyfans
+      - ${CONFIGDIR}qb-adult:/config
+      - ${DOWNLOADS}:/downloads
+      - ${ADULTSCENES}:/adultscenes
+      - ${ADULTMOVIES}:/adultmovies
+      - ${AMATEUR}:/amateur
+      - ${INTERACTIVE}:/interactive
+      - ${ADULTGAMES}:/games
+      - ${OF}:/onlyfans
     ports:
       - 6881:6881
       - 6881:6881/udp
-      - 8080:8080
+      - ${QBA}:8080
     restart: unless-stopped
