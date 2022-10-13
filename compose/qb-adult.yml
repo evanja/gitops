@@ -14,6 +14,7 @@ services:
       - ${DOWNLOADS}:/downloads
       - ${ADULTSCENES}:/adultscenes
       - ${ADULTMOVIES}:/adultmovies
+      - ${ADULTGAMES}:/adultgames
       - ${AMATEUR}:/amateur
       - ${INTERACTIVE}:/interactive
       - ${ADULTGAMES}:/games
