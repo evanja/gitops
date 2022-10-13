@@ -18,7 +18,4 @@ services:
       - ${CONFIGDIR}airsonic:/config
       - ${AUDIOS}:/data/music
 
-  restart: unless-stopped
-
-  config:
-    
+    restart: unless-stopped
