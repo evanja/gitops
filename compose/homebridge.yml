@@ -8,7 +8,4 @@ services:
     environment:
       - ${HB_PORT}=8581
     volumes:
-      - homebridge:/homebridge
-volumes:
-  homebridge:
-    external: true
+      ${CONFIGDIR}homebridge:/homebridge
