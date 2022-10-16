@@ -12,7 +12,7 @@ services:
       - PLEX_CLAIM=${PLEX_CLAIM}
     volumes:
       - ${CONFIGDIR}plex:/config
-      - ${TV}tv:/tv
+      - ${TV}:/tv
       - ${MOVIES}:/movies
       - ${TRANSCODE}:/transcode
     restart: unless-stopped
