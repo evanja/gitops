@@ -12,7 +12,7 @@ services:
 #      - RUN_OPTS=<run options here> #optional
     volumes:
       - ${CONFIGDIR}jackett:/config
-      - /home/console/downloads:/downloads
+      - ${DOWNLOADS}:/downloads
     ports:
       - ${JACKETT_PORT}:9117
     restart: unless-stopped
