@@ -18,6 +18,10 @@ services:
         published: ${DNS_REP_PORT}
         protocol: udp
         mode: host
+      - target: ${PH_MGMT}
+        published: ${PH_MGMT}
+        protocol: tcp
+        mode: host
     environment:
       TZ: ${TZ}
       WEBPASSWORD: '${PASSWORD}'
