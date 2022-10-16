@@ -9,7 +9,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - VERSION=docker
-      - PLEX_CLAIM=claim-tixke-pjT9cVg44FvWzU #optional
+      - PLEX_CLAIM=${PLEX_CLAIM}
     volumes:
       - ${CONFIGDIR}plex:/config
       - ${TV}tv:/tv
