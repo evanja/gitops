@@ -17,7 +17,7 @@ services:
 #      - /home/console/media/games:/games
 #      - /home/console/media/comics:/comics
     ports:
-      - 6881:6881
-      - 6881:6881/udp
+      - 6882:6881
+      - 6882:6881/udp
       - 8080:8080
     restart: unless-stopped
