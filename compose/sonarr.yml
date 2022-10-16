@@ -10,8 +10,8 @@ services:
       - TZ=${TZ}
     volumes:
       - ${CONFIGDIR}sonarr:/config
-      - /home/console/media/tv:/tv #optional
-      - /home/console/downloads:/downloads #optional
+      - ${TV}:/tv #optional
+      - ${DOWNLOADS}:/downloads #optional
     ports:
       - ${SONARR_PORT}:8989
     restart: unless-stopped
