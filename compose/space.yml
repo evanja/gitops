@@ -13,19 +13,6 @@ services:
         - /mnt/data/config/space/circlet-server-onprem:/home/space/circlet-server-onprem/config
         environment:
             JAVA_OPTS: "-Dconfig.file=/home/space/circlet-server-onprem/config/space.on-premises.conf"
-        depends_on:
-            - init-configs:
-                condition: service_completed_successfully
-            - vcs:
-                condition: service_started
-            - redis:
-                condition: service_started
-            - postgres:
-                condition: service_started
-            - minio:
-                condition: service_started
-            - elasticsearch:
-                condition: service_healthy
         ports:
         - "8084:8084"
         networks:
@@ -39,17 +26,6 @@ services:
         - /mnt/data/config/space/vcs-hosting:/home/space/git/vcs-hosting/config
         environment:
             JAVA_OPTS: '-Dproperties.file=config/vcs.on-premises.properties'
-        depends_on:
-            - init-configs:
-                condition: service_completed_successfully
-            - redis:
-                condition: service_started
-            - postgres:
-                condition: service_started
-            - minio:
-                condition: service_started
-            - elasticsearch:
-                condition: service_healthy
         ports:
         - "2222:2222"
         - "8880:8080"
@@ -64,17 +40,7 @@ services:
         - /mnt/data/config/space/packages-server:/home/space/packages-server/config
         environment:
             JAVA_OPTS: '-Dconfig.file=/home/space/packages-server/config/packages.on-premises.conf'
-        depends_on:
-            - init-configs:
-                condition: service_completed_successfully
-            - redis:
-                condition: service_started
-            - postgres:
-                condition: service_started
-            - minio:
-                condition: service_started
-            - elasticsearch:
-                condition: service_healthy
+
         ports:
         - "8390:8390"
         - "9390:9390"
@@ -89,9 +55,7 @@ services:
         - /mnt/data/config/space/langservice-server:/home/space/langservice-server/config
         environment:
             JAVA_OPTS: "-Dconfig.file=/home/space/langservice-server/config/langservice.on-premises.conf"
-        depends_on:
-            - init-configs:
-                condition: service_completed_successfully
+
         ports:
         - "8095"
         networks:
