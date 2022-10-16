@@ -14,17 +14,17 @@ services:
         environment:
             JAVA_OPTS: "-Dconfig.file=/home/space/circlet-server-onprem/config/space.on-premises.conf"
         depends_on:
-            init-configs:
+            - init-configs:
                 condition: service_completed_successfully
-            vcs:
+            - vcs:
                 condition: service_started
-            redis:
+            - redis:
                 condition: service_started
-            postgres:
+            - postgres:
                 condition: service_started
-            minio:
+            - minio:
                 condition: service_started
-            elasticsearch:
+            - elasticsearch:
                 condition: service_healthy
         ports:
         - "8084:8084"
@@ -40,19 +40,19 @@ services:
         environment:
             JAVA_OPTS: '-Dproperties.file=config/vcs.on-premises.properties'
         depends_on:
-            init-configs:
+            - init-configs:
                 condition: service_completed_successfully
-            redis:
+            - redis:
                 condition: service_started
-            postgres:
+            - postgres:
                 condition: service_started
-            minio:
+            - minio:
                 condition: service_started
-            elasticsearch:
+            - elasticsearch:
                 condition: service_healthy
         ports:
         - "2222:2222"
-        - "8080:8080"
+        - "8880:8080"
         networks:
         - "frontend"
         - "backend-apps"
@@ -65,15 +65,15 @@ services:
         environment:
             JAVA_OPTS: '-Dconfig.file=/home/space/packages-server/config/packages.on-premises.conf'
         depends_on:
-            init-configs:
+            - init-configs:
                 condition: service_completed_successfully
-            redis:
+            - redis:
                 condition: service_started
-            postgres:
+            - postgres:
                 condition: service_started
-            minio:
+            - minio:
                 condition: service_started
-            elasticsearch:
+            - elasticsearch:
                 condition: service_healthy
         ports:
         - "8390:8390"
@@ -90,7 +90,7 @@ services:
         environment:
             JAVA_OPTS: "-Dconfig.file=/home/space/langservice-server/config/langservice.on-premises.conf"
         depends_on:
-            init-configs:
+            - init-configs:
                 condition: service_completed_successfully
         ports:
         - "8095"
