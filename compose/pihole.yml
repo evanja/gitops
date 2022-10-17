@@ -18,10 +18,7 @@ services:
         published: ${DNS_REP_PORT}
         protocol: udp
         mode: host
-      - target: 80
-        published: ${PH_MGMT}
-        protocol: tcp
-        mode: host
+      - 85:80/tcp
     environment:
       TZ: ${TZ}
       WEBPASSWORD: '${PASSWORD}'
