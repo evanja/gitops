@@ -1,0 +1,10 @@
+version: '3'
+services:
+  dupeguru:
+    image: jlesage/dupeguru
+    ports:
+      - ${DG_PORT}:5800
+    volumes:
+      - /home/console/config/dupeguru:/config:rw
+      - ${ADULT_SCENES}:/adultscenes:rw
+      - ${ADULT_MOVIES}:/adultmovies:rw

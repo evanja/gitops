@@ -1,0 +1,15 @@
+---
+version: "3.8"
+services:
+  tautulli:
+    image: lscr.io/linuxserver/tautulli
+    container_name: tautulli
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${CONFIGDIR}tautulli:/config
+    ports:
+      - ${TAUTULLI}:8181
+    restart: unless-stopped
