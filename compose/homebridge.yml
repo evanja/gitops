@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   homebridge:
     image: oznu/homebridge:ubuntu
@@ -7,5 +7,5 @@ services:
     network_mode: host
     environment:
       - ${HB_PORT}=8581
-    volume:
-      ${CONFIGDIR}homebridge:/homebridge
+    volumes:
+      - ${CONFIGDIR}homebridge:/homebridge
