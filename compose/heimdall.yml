@@ -11,6 +11,6 @@ services:
     volumes:
       - ${CONFIGDIR}heimdall:/config
     ports:
-      - 83:80
-      - 444:443
+      - ${HEIMDALLHTTP}:80
+      - ${HEIMDALLHTTPS}:443
     restart: unless-stopped
