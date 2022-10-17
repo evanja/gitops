@@ -5,6 +5,6 @@ services:
     ports:
       - ${DG_PORT}:5800
     volumes:
-      - /home/console/config/dupeguru:/config:rw
+      - ${CONFIGDIR}dupeguru:/config
       - ${ADULT_SCENES}:/adultscenes
       - ${ADULT_MOVIES}:/adultmovies
