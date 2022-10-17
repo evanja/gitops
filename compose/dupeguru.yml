@@ -6,5 +6,5 @@ services:
       - ${DG_PORT}:5800
     volumes:
       - /home/console/config/dupeguru:/config:rw
-      - ${ADULT_SCENES}:/adultscenes:rw
-      - ${ADULT_MOVIES}:/adultmovies:rw
+      - ${ADULT_SCENES}:/adultscenes
+      - ${ADULT_MOVIES}:/adultmovies
