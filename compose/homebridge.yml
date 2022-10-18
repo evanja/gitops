@@ -5,7 +5,6 @@ services:
     container_name: homebridge
     restart: always
     ports:
-      ports:
       - target: ${HBPORT}
         published: ${HBPORT}
         protocol: tcp
