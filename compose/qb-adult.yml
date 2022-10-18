@@ -17,7 +17,7 @@ services:
       - ${ADULTGAMES}:/adultgames
       - ${AMATEUR}:/amateur
       - ${INTERACTIVE}:/interactive
-      - ${ADULTGAMES}:/games
+      - ${GAMES}:/games
       - ${OF}:/onlyfans
     ports:
       - 6881:6881
