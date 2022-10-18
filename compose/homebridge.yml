@@ -4,8 +4,11 @@ services:
     image: oznu/homebridge:ubuntu
     container_name: homebridge
     restart: always
-    network_mode: host
-    environment:
-      - ${HB_PORT}=8581
+    ports:
+      ports:
+      - target: ${HBPORT}
+        published: ${HBPORT}
+        protocol: tcp
+        mode: overlay
     volumes:
       - ${CONFIGDIR}homebridge:/homebridge
