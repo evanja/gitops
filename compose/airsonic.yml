@@ -16,6 +16,6 @@ services:
 #      - JAVA_OPTS=<options> #optional
     volumes:
       - ${CONFIGDIR}airsonic:/config
-      - ${AUDIOS}:/data/music
+      - ${ADULTAUDIOS}:/data/music
 
     restart: unless-stopped
