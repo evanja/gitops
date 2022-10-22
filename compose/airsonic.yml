@@ -2,7 +2,7 @@
 version: "3"
 services:
   airsonic:
-    image: lscr.io/linuxserver/airsonic
+    image: lscr.io/linuxserver/airsonic-advanced
     container_name: airsonic
     
     ports:
