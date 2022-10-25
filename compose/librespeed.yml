@@ -1,14 +1,14 @@
 ---
-version: "2"
+version: "3"
 services:
   librespeed:
     image: lscr.io/linuxserver/librespeed
     container_name: librespeed
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Australia/Brisbane
-      - PASSWORD=T00woomb@
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PASSWORD=${DEF_PASSWORD}
 #      - CUSTOM_RESULTS=false #optional
 #      - DB_TYPE=sqlite #optional
 #      - DB_NAME=librespeed #optional

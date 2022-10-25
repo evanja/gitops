@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: ${ADMIN_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      PGDATA: /data/postgres
+      PGDATA: ${DATADIR}postgres
     volumes:
       - ${DATADIR}postgres:/data/postgres
     ports:
