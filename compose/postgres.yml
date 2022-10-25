@@ -20,9 +20,12 @@ services:
     #container_name: pgadmin_db
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      - PGADMIN_DEFAULT_EMAIL: ${DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      - PGADMIN_CONFIG_SERVER_MODE: 'False'
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ${DATADIR}pgadmin:/var/lib/pgadmin
 
