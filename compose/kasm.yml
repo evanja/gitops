@@ -15,5 +15,5 @@ services:
       - ${DATADIR}kasm/profiles:/profiles #optional
     ports:
       - ${KASM_INIT}:3000
-      - ${KASM_PORT}:443
+      - ${KASM_PORT}:4443
     restart: unless-stopped
