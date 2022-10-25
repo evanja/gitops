@@ -12,7 +12,7 @@ services:
       #- DOCKER_HUB_PASSWORD=PASS #optional
     volumes:
       - ${CONFIGDIR}kasm:/opt
-      - ${DATADIR/kasm/profiles}:/profiles #optional
+      - ${DATADIR}kasm/profiles:/profiles #optional
     ports:
       - ${KASM_INIT}:3000
       - ${KASM_PORT}:443
