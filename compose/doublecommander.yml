@@ -1,0 +1,17 @@
+---
+version: "3.8"
+services:
+  doublecommander:
+    image: linuxserver/doublecommander:version-18af2b38
+    container_name: doublecommander
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ} # Specify a timezone to use EG Europe/London.
+      - PUID=${PUID} # for UserID
+      - PGID=${PGID} # for GroupID
+    volumes:
+      - ${CONFIGDIR}:/data # Host data directories, mount as many as needed.
+      - ${MEDIA}:/media
+      - ${CONFIGDIR}dc:/config # Users home directory in the container, stores program settings.
+    ports:
+      - 3334:3000/tcp # Double Commander desktop gui.
