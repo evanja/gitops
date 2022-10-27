@@ -5,6 +5,8 @@ services:
     image: lscr.io/linuxserver/kasm:latest
     #container_name: kasm
     privileged: true
+    security_opt:
+      - seccomp:unconfined
     environment:
       - KASM_PORT=${KASM_PORT}
       - TZ=${TZ}

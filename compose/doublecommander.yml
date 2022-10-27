@@ -14,4 +14,4 @@ services:
       - ${MEDIA}:/media
       - ${CONFIGDIR}dc:/config # Users home directory in the container, stores program settings.
     ports:
-      - 3334:3000/tcp # Double Commander desktop gui.
+      - ${DCPORT}:3000/tcp # Double Commander desktop gui.
