@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  rflood:
+    container_name: rflood
+    image: cr.hotio.dev/hotio/rflood
+    ports:
+      - "${FLOOD}:3000"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=002
+      - TZ=${TZ}
+      - FLOOD_AUTH=false
+    volumes:
+      - ${CONFIGDIR}qbittorrent:/config
+      - ${DOWNLOADS}:/downloads
+      - ${TV}:/tv
+      - ${MOVIES}:/movies
