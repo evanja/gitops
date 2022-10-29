@@ -1,14 +1,14 @@
 ---
-version: "3"
+version: "3.7"
 services:
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent
+    image: cr.hotio.dev/hotio/qbittorrent
     container_name: qbittorrent
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - WEBUI_PORT=${QB_PORT}
+      - WEBUI_PORT=${QB}
     volumes:
       - ${CONFIGDIR}qbittorrent:/config
       - ${DOWNLOADS}:/downloads
@@ -17,7 +17,5 @@ services:
 #      - /home/console/media/games:/games
 #      - /home/console/media/comics:/comics
     ports:
-      - 6882:6881
-      - 6882:6881/udp
-      - 8080:8080
+      - ${QB}:8080
     restart: unless-stopped

@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  qflood:
+    container_name: qflood
+    image: cr.hotio.dev/hotio/qflood
+    ports:
+      - "8080:8080"
+      - "3000:3000"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=002
+      - TZ=${TZ}
+      - FLOOD_AUTH=false
+    volumes:
+      - ${CONFIGDIR}qbittorrent:/config
+      - ${DOWNLOADS}:/downloads
+      - ${TV}:/tv
+      - ${MOVIES}:/movies
