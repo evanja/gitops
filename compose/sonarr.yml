@@ -1,8 +1,8 @@
 ---
-version: "3"
+version: "3.7"
 services:
   sonarr:
-    image: lscr.io/linuxserver/sonarr
+    image: cr.hotio.dev/hotio/sonarr
     container_name: sonarr
     environment:
       - PUID=${PUID}
