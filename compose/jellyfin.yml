@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: cr.hotio.dev/hotio/jellyfin
+    ports:
+      - "${JELLYFIN}:8096"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=002
+      - TZ=${TZ}
+    volumes:
+      - ${CONFIGDIR}jellyfin:/config
+      - ${INTERACTIVE}:/interactive
+      - ${ADULTSCENES}:/adultscenes
+      - ${ADULTMOVIES}:/adultmovies
+      - ${OF}:/onlyfans
+      - ${DOWNLOADS}:/unsorted
+      - ${AMATEUR}:/amateur
+
