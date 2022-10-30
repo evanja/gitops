@@ -1,8 +1,8 @@
 ---
-version: "3"
+version: "3.7"
 services:
   jackett:
-    image: lscr.io/linuxserver/jackett
+    image: cr.hotio.dev/hotio/jackett
     container_name: jackett
     environment:
       - PUID=${PUID}
