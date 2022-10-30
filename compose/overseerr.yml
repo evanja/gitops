@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  overseerr:
+    container_name: overseerr
+    image: cr.hotio.dev/hotio/overseerr
+    ports:
+      - "${OVERSEER}:5055"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=002
+      - TZ=${TZ}
+    volumes:
+      - ${CONFIGDIR}overseerr:/config
