@@ -8,3 +8,4 @@ services:
       - ${CONFIGDIR}dupeguru:/config
       - ${ADULTSCENES}:/adultscenes
       - ${ADULTMOVIES}:/adultmovies
+      - ${ADULTAUDIOS}:/adultaudios
