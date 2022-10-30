@@ -10,9 +10,9 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${CONDIGDIR}homeassistant:/config
+      - ${CONFIGDIR}homeassistant:/config
     ports:
-      - ${HA_PORT}:8123
+      - ${HAPORT}:8123
 #    devices:
 #      - /path/to/device:/path/to/device
     restart: unless-stopped
