@@ -5,7 +5,7 @@ services:
     container_name: overseerr
     image: cr.hotio.dev/hotio/overseerr
     ports:
-      - "${OVERSEER}:5055"
+      - "${OVERSEERR}:5055"
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
