@@ -2,13 +2,12 @@
 version: "3"
 services:
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent
+    image: cr.hotio.dev/hotio/qbittorrent
     container_name: qbittorrent
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - WEBUI_PORT=${QBA}
     volumes:
       - ${CONFIGDIR}qb-adult:/config
       - ${DOWNLOADS}:/downloads
@@ -17,10 +16,9 @@ services:
       - ${ADULTGAMES}:/adultgames
       - ${AMATEUR}:/amateur
       - ${INTERACTIVE}:/interactive
-      - ${GAMES}:/games
       - ${OF}:/onlyfans
     ports:
       - 6881:6881
       - 6881:6881/udp
-      - ${QBA}:8030
+      - ${QBA}:8080
     restart: unless-stopped
