@@ -6,6 +6,6 @@ services:
     ports:
       - ${RMD_PORT}:7505/tcp
     volumes:
-      - ${ADULTAUDIOS}:/output
-      - ${CONFIGDIR}rmd:/download
+      - ${ADULTAUDIOS}:/download
+      - ${CONFIGDIR}rmd:/base
     restart: unless-stopped
