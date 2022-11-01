@@ -1,14 +1,14 @@
 ---
-version: "2.1"
+version: "3.8"
 services:
   code-server:
     image: lscr.io/linuxserver/code-server
     container_name: code-server
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Australia/Brisbane
-      - PASSWORD=aSf!N1rlQJn4V77F&&PcNLosnFAX1! #optional
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PASSWORD=${VSCODE_PASSWORD} #optional
 #      - HASHED_PASSWORD= #optional
 #      - SUDO_PASSWORD=password #optional
 #      - SUDO_PASSWORD_HASH= #optional
