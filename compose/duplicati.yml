@@ -1,18 +1,18 @@
 ---
-version: "2.1"
+version: "3.8"
 services:
   duplicati:
     image: lscr.io/linuxserver/duplicati
     container_name: duplicati
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Australia/Brisbane
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
       - CLI_ARGS= #optional
     volumes:
       - ${CONFIGDIR}duplicati:/config
-      - /home/console/backups:/backups
-      - /home/console/config:/source
+      - ${DATADIR}backups:/backups
+      - ${SOURCEDIR}:/source
     ports:
-      - 8200:8200
+      - ${DUPE_PORT}:8200
     restart: unless-stopped
