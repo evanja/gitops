@@ -1,0 +1,16 @@
+---
+version: "3.7"
+services:
+  mstream:
+    image: lscr.io/linuxserver/mstream:latest
+    container_name: mstream
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${CONFIGDIR}mstream:/config
+      - ${ADULTAUDIOS}:/music
+    ports:
+      - ${MSTREAM}:3000
+    restart: unless-stopped
