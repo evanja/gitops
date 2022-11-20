@@ -1,0 +1,17 @@
+---
+version: "3.7"
+services:
+  pyload:
+    image: lscr.io/linuxserver/pyload-ng
+    container_name: pyload
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${CONFIGDIR}pyload-ng:/config
+      - ${AMATEUR}:/downloads
+    ports:
+      - 8300:8000
+      - 9666:9666 #optional
+    restart: unless-stopped
