@@ -1,0 +1,7 @@
+---
+version: "3.7"
+services:
+  mastodon:
+    image: linuxserver/latest
+    container_name: mastodon
+    restart: no
