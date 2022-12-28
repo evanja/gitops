@@ -16,6 +16,7 @@ services:
       - ${OF}:/data/onlyfans
       - ${DOWNLOADS}:/unsorted
       - ${AMATEUR}:/data/amateur
+      - ${HENTAI}:/data/hentai
     # - /opt/vc/lib:/opt/vc/lib #optional
     ports:
       - ${EMBY_PORT}:8096

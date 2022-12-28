@@ -17,6 +17,7 @@ services:
       - ${AMATEUR}:/amateur
       - ${INTERACTIVE}:/interactive
       - ${OF}:/onlyfans
+      - ${HENTAI}:/hentai
     ports:
       - 6881:6881
       - 6881:6881/udp
