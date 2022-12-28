@@ -14,7 +14,7 @@ services:
       - ${DOWNLOADS}:/downloads
       - ${TV}:/tv
       - ${MOVIES}:/movies
-#      - /home/console/media/games:/games
+      - ${GAMES}:/games
 #      - /home/console/media/comics:/comics
     ports:
       - ${QB}:8080
