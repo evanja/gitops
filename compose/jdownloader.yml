@@ -6,4 +6,4 @@ services:
       - "5800:5800"
     volumes:
       - /home/console/config/jdownloader:/config:rw
-      - /home/console/media/downloads:/output:rw
+      - /home/console/media/of:/output:rw
