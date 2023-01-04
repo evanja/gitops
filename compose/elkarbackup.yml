@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  elkarbackup:
+    image: elkarbackup/elkarbackup:latest
+    environment:
+      - TZ=${TZ}
+      - SYMFONY_DATABASE_USER=${ELKAR_DB_USER}
+      - SYMFONY__DATABASE__PASSWORD=${ELKAR_DB_PASSWORD}
+      - SYMFONY__DATABASE__HOST=${DB_HOST}
+      
+    volumes:
+        - ${CONFIGDIR}elkar/backups:/app/backups
+        - ${CONFIGDIR}elkar/uploads:/app/uploads
+        - ${CONFIGDIR}elkar/sshkeys:/app/.ssh
+    ports:
+      - 8000:80
