@@ -9,9 +9,7 @@ services:
       - SYMFONY__DATABASE__PASSWORD=${ELKAR_DB_PASSWORD}
       - SYMFONY__DATABASE__HOST=${DB_HOST}
       - SYMFONY__DATABASE__DRIVER=pdo_mysql
-      - SYMFONY__DATABASE__PORT=3306
-      
-      - EB_CRON: "enabled"
+      - EB_CRON=enabled
 
     volumes:
         - ${CONFIGDIR}elkar/backups:/app/backups
