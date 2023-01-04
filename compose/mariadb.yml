@@ -7,7 +7,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+#      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - TZ=${TZ}
 #      - MYSQL_DATABASE=USER_DB_NAME #optional
 #      - MYSQL_USER=MYSQL_USER #optional
