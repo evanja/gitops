@@ -1,0 +1,17 @@
+---
+version: "3.7"
+services:
+  phpmyadmin:
+    image: lscr.io/linuxserver/phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PMA_ARBITRARY=1 #optional
+      - PMA_ABSOLUTE_URI=https://phpmyadmin.${DOMAIN} #optional
+    volumes:
+      - ${CONFIGDIR}phpmyadmin:/config
+    ports:
+      - ${PHPMYADMIN}:80
+    restart: unless-stopped
