@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  whisparr:
+    container_name: whisparr
+    image: cr.hotio.dev/hotio/whisparr
+    ports:
+      - "6969:6969"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=002
+      - TZ=${TZ}
+    volumes:
+      - ${CONFIGDIR}whisparr:/config
+      - ${ADULTSCENES}:/adultscenes
+      - ${ADULTMOVIES}:/adultmovies
+      - ${OF}:/of
