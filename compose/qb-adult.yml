@@ -18,6 +18,7 @@ services:
       - ${INTERACTIVE}:/interactive
       - ${OF}:/onlyfans
       - ${HENTAI}:/hentai
+      - ${LP}:/lp
     ports:
       - 6881:6881
       - 6881:6881/udp

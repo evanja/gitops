@@ -36,6 +36,7 @@ services:
       ## Point this at your collection.
       - ${ADULTMOVIES}:/adultmovies
       - ${ADULTSCENES}:/adultscenes
+      - ${LP}:/lp
       ## This is where your stash's metadata lives
       ##- ${CONFIGDIR}stash/metadata:/metadata
       ## Any other cache content.

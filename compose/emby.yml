@@ -17,6 +17,7 @@ services:
       - ${DOWNLOADS}:/unsorted
       - ${AMATEUR}:/data/amateur
       - ${HENTAI}:/data/hentai
+      - ${LP}:/data/lp
     # - /opt/vc/lib:/opt/vc/lib #optional
     ports:
       - ${EMBY_PORT}:8096
