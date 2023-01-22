@@ -7,9 +7,9 @@ services:
     environment:
       POSTGRES_USER: ${ADMIN_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      PGDATA: ${DATADIR}postgres
+      PGDATA: ${DBDIR}postgres
     volumes:
-      - ${DATADIR}postgres:/data/postgres
+      - ${DBDIR}postgres:/data/postgres
     ports:
       - "${PG_PORT}:5432"
     networks:
@@ -27,7 +27,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${DATADIR}pgadmin:/var/lib/pgadmin
+      - ${CONFIGDIR}pgadmin:/var/lib/pgadmin
 
     ports:
       - "${PGADMIN_PORT}:80"
