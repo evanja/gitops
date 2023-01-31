@@ -18,6 +18,7 @@ services:
       - ${AMATEUR}:/data/amateur
       - ${HENTAI}:/data/hentai
       - ${LP}:/data/lp
+      - ${CDL}:/data/cdl
     # - /opt/vc/lib:/opt/vc/lib #optional
     ports:
       - ${EMBY_PORT}:8096

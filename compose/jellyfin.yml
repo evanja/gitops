@@ -19,4 +19,5 @@ services:
       - ${OF}:/onlyfans
       - ${DOWNLOADS}:/unsorted
       - ${AMATEUR}:/amateur
+      - ${CDL}:/cdl
 
